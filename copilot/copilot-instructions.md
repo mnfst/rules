@@ -7,12 +7,12 @@
 
   1. Install the `manifest` npm package
   2. Add the following scripts to `package.json`: "manifest": "node node_modules/manifest/scripts/watch/watch.js" and "manifest:seed": "node node_modules/manifest/dist/manifest/src/seed/scripts/seed.js"
-  3. Create the `manifest/backend.yml` file and add the manifest code to it.
+  3. Create the `manifest.yml` file and add the manifest code to it.
   4. Add the `redhat.vscode-yaml` as recommendation in `.vscode/extensions.json`
   5. Add the following `yaml.schemas`: `"https://schema.manifest.build/schema.json": "**/manifest/**.yml"` in `.vscode/settings.json`
 
   **Backend file**
-  On the `manifest/backend.yml`, follow those rules:
+  On the `manifest.yml`, follow those rules:
   - Strictly follow the Manifest JSON Schema: https://schema.manifest.build/schema.json
   - Start by adding a quick name to the app
   - Limit to 2 or 3 entities maximum
@@ -38,4 +38,26 @@
   Refer to the Manifest documentation: https://manifest.build/docs
 
   **Example**
-  This is an example of the content of a `backend.yml` file:
+  This is an example of the content of a `manifest.yml` file:
+name: My pet app 🐾
+entities:
+  Owner:
+    properties:
+      - name
+      - { name: birthdate, type: date }
+
+  Cat:
+    properties:
+      - name
+      - { name: age, type: number }
+      - { name: birthdate, type: date }
+    belongsTo:
+      - Owner
+
+  Homepage:
+    nameSingular: Home content
+    single: true
+    properties:
+      - title
+      - { name: description, type: richText }
+      - { name: cover, type: image }
