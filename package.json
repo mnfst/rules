@@ -1,0 +1,27 @@
+{
+  "name": "manifest-rules-for-llms",
+  "version": "1.0.0",
+  "description": "Manifest rules for App Builders and AI Code tools",
+  "keywords": [
+    "rules",
+    "llm",
+    "cursor",
+    "windsurf",
+    "copilot"
+  ],
+  "homepage": "https://github.com/mnfst/rules#readme",
+  "bugs": {
+    "url": "https://github.com/mnfst/rules/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mnfst/rules.git"
+  },
+  "license": "MIT",
+  "author": "Manifest",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "build": "node scripts/build.js"
+  }
+}
